@@ -1,11 +1,12 @@
 import './SixtySix.scss'
 
 import React from 'react'
+import Hand from './Hand'
 
 export default function SixtySix({ data }) {
     return (
-        <div className={`sixtySix`}>
-            {/* <img className='gameImage' src={`${REACT_APP_RESOURCES}cartoane/game_photos/${data.hero}/${data.hero}_${data.photoType}.png`} alt='hero'></img> */}
+        <div className={`sixtySix-wrapper`}>
+            <Hand />
         </div>
     )
 }
