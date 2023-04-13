@@ -3,7 +3,7 @@ import SixtySix from "./components/SixtySix";
 
 function App() {
   return (<>
-    <SixtySix />
+    <SixtySix data={2}/>
   </>
   );
 }
