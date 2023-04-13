@@ -1,47 +1,26 @@
 {
-  "name": "first-app",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "@types/jest": "^29.5.0",
-    "@types/node": "^18.15.11",
-    "@types/react": "^18.0.34",
-    "@types/react-dom": "^18.0.11",
-    "classnames": "^2.3.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "^6.4.1",
-    "react-scripts": "^5.0.1",
-    "typescript": "^5.0.4",
-    "web-vitals": "^2.1.4"
-  },
+  "name": "66-card-game",
+  "version": "1.0.0",
+  "description": "Online multiplayer card game",
+  "main": "server.js",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "node server",
+    "client": "npm start --prefix client",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app"
-    ]
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Minucu/66-card-game.git"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "author": "Mizan Ali",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Minucu/66-card-game/issues"
   },
-  "devDependencies": {
-    "node-sass": "^7.0.1"
+  "homepage": "https://github.com/Minucu/66-card-game#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "socket.io": "^3.1.1"
   }
 }
