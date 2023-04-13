@@ -1,5 +1,5 @@
 import React from "react";
-import SixtySix from "./components/SixtySix";
+import SixtySix from "./components/SixtySix/SixtySix";
 
 function App() {
   return (<>

@@ -1,7 +1,6 @@
 import './Card.scss'
 
 import React from 'react'
-// import Backcard from './assets/backcard.png'
 
 export default function Card(prop: { data: string }) {
     return (

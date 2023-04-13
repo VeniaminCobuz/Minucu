@@ -1,7 +1,7 @@
 import './SixtySix.scss'
 
 import React from 'react'
-import Hand from './Hand'
+import Hand from './Hand/Hand'
 
 export default function SixtySix(prop: { data: Number }) {
     return (
