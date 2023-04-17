@@ -18,6 +18,12 @@ export default function SixtySix(props: any) {
     const [users, setUsers] = useState([])
     const [currentUser, setCurrentUser] = useState('')
 
+    //initialize game state
+    const [winner, setWinner] = useState('')
+    const [gameOver, setGameOver] = useState(true)
+    const [turn, setTurn] = useState('')
+    const [drawCardPile, setDrawCardPile] = useState([])
+
     useEffect(() => {
         const connectionOptions: any = {
             "forceNew": true,
@@ -85,9 +91,6 @@ export default function SixtySix(props: any) {
         })
     }, [])
 
-    //initialize game state
-    const [gameOver, setGameOver] = useState(true)
-
     useEffect(() => {
         socket.on('initGameState', (gameOver: boolean) => {
             setGameOver(gameOver)
@@ -132,8 +135,38 @@ export default function SixtySix(props: any) {
 
     return (
         <div className={`sixtySix-wrapper`}>
-            {(!roomFull) ? <>
+            {/* {(!roomFull) ? <>
                 <Hand data={props.data} />
+            </> : <h1>Room full</h1>} */}
+
+            {(!roomFull) ? <>
+
+                <div className='topInfo'>
+                    <img src={require('../../assets/logo.png').default} />
+                    <h1>Game Code: {room}</h1>
+                </div>
+
+                {/* PLAYER LEFT MESSAGES */}
+                {users.length === 1 && currentUser === 'Player 2' && <h1 className='topInfoText'>Player 1 has left the game.</h1>}
+                {users.length === 1 && currentUser === 'Player 1' && <h1 className='topInfoText'>Waiting for Player 2 to join the game.</h1>}
+
+                {users.length === 2 && <>
+
+                    {gameOver ? <div>{winner !== '' && <><h1>GAME OVER</h1><h2>{winner} wins!</h2></>}</div> :
+                        <div>
+                            {/* PLAYER 1 VIEW */}
+                            {currentUser === 'Player 1' && <>
+                                SALUT 1
+                                <br />
+                            </>}
+
+                            {/* PLAYER 2 VIEW */}
+                            {currentUser === 'Player 2' && <>
+                                SALUT 2
+                                <br />
+                            </>}
+                        </div>}
+                </>}
             </> : <h1>Room full</h1>}
 
             <br />
